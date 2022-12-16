@@ -130,4 +130,17 @@ const result = numbers.filter(getNegativeNumbers)
 
 console.log(result)
 
+console.log("Zad 4")
 
+const years = [1995, 1856]
+
+function mapuj(element) {
+    years2 = Number(2022 - element)
+    return [element, years2]
+
+
+}
+
+const wynig = years.map(mapuj)
+
+console.log(wynig)
