@@ -159,3 +159,49 @@ function getSecondMaxNumber(array) {
 }
 
 console.log(getSecondMaxNumber(numbers5))
+
+// Zad 6 - tablice z imionami
+
+let names1 = ["Jan", "Maria", "Kasia", "Wojtek", "Zosia"]
+
+console.log(names1)
+console.log(names1[0])
+console.log(names1[4])
+console.log(names1.length)
+
+const names2 = []
+
+names2.push("Jan")
+names2.push("Maria")
+names2.push("Kasia")
+names2.push("Wojtek")
+names2.push("Zosia")
+names2.push("Grzesiek")
+
+console.log(names2[0])
+console.log(names2[2])
+console.log(names2.length)
+
+// Zad 7 - tablice 2d
+
+const arrayOfNumbers = [
+    [1, 2, 3, 4],
+    [5, 6, 7, 8],
+    [9, 10, 11, 12],
+]
+
+console.log("Tablica 2D")
+console.log(arrayOfNumbers[0][1])
+console.log(arrayOfNumbers[1])
+console.log([...arrayOfNumbers[2]].length)
+
+const mixedArray = [
+    ["Maria", "Jan", "Piotr"],
+    [1, 2, 3, 4, 5, 6],
+]
+
+console.log("mixedArray")
+console.log(mixedArray[0][2])
+console.log(mixedArray[0][4])
+console.log(mixedArray[1].length)
+
