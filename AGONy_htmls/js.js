@@ -144,3 +144,18 @@ function mapuj(element) {
 const wynig = years.map(mapuj)
 
 console.log(wynig)
+
+// Zad 5
+
+console.log("Zad 5")
+
+const numbers5 = [2, 3, 1, 6, 100, 49, 5, 7, 8, 9];
+
+function getSecondMaxNumber(array) {
+    let max = Math.max.apply(null, array)
+    array.splice(array.indexOf(max), 1)
+    return Math.max.apply(null, array)
+
+}
+
+console.log(getSecondMaxNumber(numbers5))
