@@ -205,3 +205,24 @@ console.log(mixedArray[0][2])
 console.log(mixedArray[0][4])
 console.log(mixedArray[1].length)
 
+
+// DOM + Events - Zad 1
+
+const childElements = document.querySelector("article").children;
+
+function getTags() {
+    console.info('DOM loaded');
+    console.info(childElements.length)
+    document.addEventListener('DOMContentLoaded', (event) => {
+        console.info("loaded")
+        // const childElements = document.body.children;
+        let text = "";
+        for (let i = 0; i < childElements.length; i++) {
+            console.log("loaded", i)
+            text += childElements[i].tagName + "<br>";
+            console.log(text, i)
+        }
+    })
+}
+
+console.log(getTags())
