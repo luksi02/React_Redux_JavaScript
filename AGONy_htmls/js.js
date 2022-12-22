@@ -205,6 +205,58 @@ console.log(mixedArray[0][2])
 console.log(mixedArray[0][4])
 console.log(mixedArray[1].length)
 
+// Obiektowosc - Zad 1
+
+class Vehicle {
+    constructor(type, name, horsepower) {
+        this.type = type;
+        this.name = name;
+        this.horsepower = horsepower;
+    }
+
+    printInfo() {
+        return [this.type, this.name, this.horsepower]
+    }
+}
+
+const boat = new Vehicle('boat', 'Boat McBoaty', 20)
+const car = new Vehicle('car', 'Chevy Impala', 150)
+const plane = new Vehicle('plane', 'Airby McFly', 2000)
+
+console.log(boat.printInfo())
+console.log(car.printInfo())
+console.log(plane.printInfo())
+
+// Obiektowosc - Zad 2
+
+class Client {
+
+    constructor(name, orders) {
+        this.name = name
+        this.orders = []
+    }
+
+    addOrder(order) {
+        this.orders.push(order)
+    }
+}
+
+class Order {
+
+    constructor(client, number) {
+        this.client = client
+        this.number = number
+    }
+}
+
+const client1 = new Client("John")
+const order1 = new Order(client1, "1")
+const order2 = new Order(client1, "2")
+
+client1.addOrder(order1);
+client1.addOrder(order2);
+
+console.table(client1.orders)
 
 // DOM + Events - Zad 1
 
@@ -226,3 +278,28 @@ function getTags() {
 }
 
 console.log(getTags())
+
+// DOM + Events - Zad 2
+
+// Dziala dla jednego, 1-go diva
+
+const selectedDiv = document.querySelector(".box").addEventListener('click', onClick)
+
+function onClick(event) {
+        console.log("click")
+        const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+        this.style.backgroundColor = randomColor
+    }
+
+// Dziala dla kazdego kolejnego diva
+
+const divs = document.querySelectorAll(".box");
+
+divs.forEach(function (div) {
+    div.addEventListener('click', function (event) {
+        console.log("click3")
+        const randomColor3 = '#' + Math.floor(Math.random()*16777215).toString(16);
+        this.style.backgroundColor = randomColor3
+    })
+})
+
