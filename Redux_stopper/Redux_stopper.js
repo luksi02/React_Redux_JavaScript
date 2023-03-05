@@ -1,5 +1,5 @@
 import React from "react";
-import withTimer, { useTimer } from "../hoc/withTimer";
+import withTimer, { useTimer } from "./withTimer";
 
 // Zamień ciało funkcji tak aby renderowała Stopper wg. treści zadania
 const Stopper = ({ stop, start, time }) => {
