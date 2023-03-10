@@ -2,7 +2,7 @@ import React from "react";
 
 const Quote = ({ quote, loading, error, karofel, addFav }) => (
   <div>
-    <button disabled={loading} onClick={karofel}>
+    <button disabled={loading} onClick={fetchQuote}>
       Pobierz cytat
     </button>
     {quote && (
