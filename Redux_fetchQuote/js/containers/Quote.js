@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import Quote from "../components/Quote";
-import { fetchQuote } from "../redux/actions";
+import {addQuoteFav, fetchQuote} from "../redux/actions";
 
 const mapStateToProps = (globalState) => {
   return {
@@ -14,6 +14,7 @@ const mapStateToProps = (globalState) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     karofel: () => dispatch(fetchQuote()),
+    addFav: (quote) => dispatch(addQuoteFav(quote))
   };
 };
 
