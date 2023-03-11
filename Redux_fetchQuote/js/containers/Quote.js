@@ -13,7 +13,7 @@ const mapStateToProps = (globalState) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    karofel: () => dispatch(fetchQuote()),
+    fetchQuote: () => dispatch(fetchQuote()),
     addFav: (quote) => dispatch(addQuoteFav(quote))
   };
 };
