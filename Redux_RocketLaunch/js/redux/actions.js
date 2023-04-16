@@ -19,14 +19,14 @@ const rocketLaunch = () => ({
     // payload: launched,
 });
 
-const launch1 = () => (dispatch, { counterInitialStore } ) => {
+const launch1 = () => (dispatch) => {
+    dispatch(counterStart())
     dispatch(counting());
-    console.log(counterInitialState)
+    console.log(counterInitialState.counter, "launch1")
 
     setTimeout(() => {
-            dispatch(rocketLaunch());
-            // clearInterval(launch1().current);
-        }, counterInitialState.counter*1000);
+        dispatch(rocketLaunch());
+    }, counterInitialState.counter * 1000);
 }
 
 export {
