@@ -7,14 +7,23 @@ const counterInitialState = {
     launched: false,
 };
 
-const counterReducer = (state = counterInitialState, {type, payload }) => {
+const counterReducer = (state = counterInitialState, {type, payload}) => {
     switch (type) {
-        case COUNTING:
+        case COUNTER_START:
             return {
                 ...state,
-                launched: false,
+                isCounting: true,
 
             };
+        case COUNTING:
+            if (state.counter > 0) {
+                return {
+                    ...state,
+                    counter: state.counter - 1,
+                }
+            }
+            return state
+                ;
 
         case ROCKET_LAUNCH:
             return {
@@ -25,7 +34,7 @@ const counterReducer = (state = counterInitialState, {type, payload }) => {
 
         default:
             return state;
-    };
+    }
 };
 
 export { counterInitialState };
