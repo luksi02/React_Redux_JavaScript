@@ -8,10 +8,31 @@ import Board from "./Board"
 import BoardSquare from "./BoardSquare"
 import GameBoard from "./GameBoard";
 
-const GameMain = () => (
+const GameMain = () => {
+    
+  const [clickedTile, setClickedTile] = useState(null);
+  const [tileValue, setTileValue] = useState(null);
+
+  const handleTileClick = (x, y, value) => {
+    setClickedTile(`(${x}, ${y})`);
+    setTileValue(value);
+  };
+    
+    return (
     <Provider store={store}>
   <div>
     <GameBoard />
+    
+    
+    <div>
+      <RandomNumbersBoard onTileClick={handleTileClick} />
+      {clickedTile && <Splash tileClicked={clickedTile} tileValue={tileValue} />}
+    </div>
+  
+    
+    
+   
+
 
     {/*<GameBoard board={board}/>*/}
 
@@ -34,5 +55,7 @@ const GameMain = () => (
   </div>
     </Provider>
 );
+
+}
 
 export default GameMain;
